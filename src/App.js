@@ -1,18 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, PureComponent } from 'react';
 import './App.css';
 
-class App extends Component {
+
+const Temp = (props) => {
+  console.log("Render Temp");
+  return (<div>{props.val}</div>);
+}
+class App extends PureComponent {
+  state = {
+    val: 1
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        val: 1
+      });
+    }, 2000);
+  }
+
+  /* shouldComponentUpdate(nextProp, nextState) {
+    console.log("Next state" + JSON.stringify(nextState));
+    return this.state.val !== nextState.val;
+  } */
   render() {
+    console.log("Render App");
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Learn React reactively</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Temp val={this.state.val} />
       </div>
     );
   }
