@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PropTypes from 'prop-types';
 
+const Test = (props) => {
+  return (
+    <div>
+      <h1>{props.str}</h1>
+      <h1>{props.bool ? 'bool' : 'no bool'}</h1>
+      <h1>{props.strOrNum}</h1>
+    </div>);
+}
+
+Test.propTypes = {
+  str: PropTypes.string,
+  bool: PropTypes.bool,
+  strOrNum: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+}
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Learn React reactively</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Test str={'Kiran'}
+          bool strOrNum={true} />
       </div>
     );
   }
