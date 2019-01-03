@@ -1,10 +1,10 @@
 
 
 export const ageUp = (val) => {
-    return dispatch => {
+    return (dispatch) => {
         setTimeout(() => {
             dispatch(ageUpAsync(val));
-        }, 5000);
+        }, 500);
     }
 }
 
@@ -12,7 +12,13 @@ export const ageUpAsync = (val) => {
     return { type: 'ADD_AGE', value: val };
 }
 
-
 export const ageDown = (val) => {
-    return { type: 'AGE_DOWN', value: val };
+    return (dispatch) => {
+        setTimeout(() => {
+            dispatch(ageDownAsync(val));
+        }, 500);
+    }
+}
+export const ageDownAsync = (val) => {
+    return { type: 'ADD_DOWN', value: val };
 }

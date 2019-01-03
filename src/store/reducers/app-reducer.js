@@ -8,7 +8,7 @@ const appReducer = (state = initialState, action) => {
     if (action.type === 'ADD_AGE') {
         newState.age += action.value;
     }
-    if (action.type === 'DOWN_AGE') {
+    if (action.type === 'ADD_DOWN') {
         newState.age -= action.value;
     }
     return newState;
