@@ -1,0 +1,45 @@
+.chat-bot-container{
+    overflow: auto;
+    position: fixed;
+    top:50vh;
+    left:50vw;
+    height: 40vh;
+    min-width: 200px;
+    min-height: 30vh;
+    width: 30vw;
+    border: 1px brown solid;
+    border-color: brown;
+    border-radius: 20px;
+    background-color: #cab6b6;
+    padding: 5px;
+    box-shadow: 10em;
+    box-sizing: content-box;
+}
+
+
+
+.sent{
+    overflow: auto;
+    width: 60%;
+    float: left;
+}
+
+.recieved{
+    overflow: auto;
+    width: 60%;
+    float: right;
+}
+.single-message{
+    box-sizing: border-box;
+    margin : 3px;
+    padding: 3px;
+    background-color: aliceblue;
+    border: 1px solid navy;
+    border-radius: 10px;
+}
+
+.message-text{
+    margin : 3px;
+    padding: 3px;
+}
+
